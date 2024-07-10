@@ -29,16 +29,5 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
       ),
     );
-    // return ChangeNotifierProvider(
-    //   create: (_) => NavigationProvider(),
-    //   child: MaterialApp(
-    //     theme: ThemeData(
-    //       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-    //       useMaterial3: true,
-    //     ),
-    //     home: HomeScreen(),
-    //     debugShowCheckedModeBanner: false,
-    //   ),
-    // );
   }
 }

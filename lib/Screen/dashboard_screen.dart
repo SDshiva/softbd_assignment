@@ -379,10 +379,10 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
-                                Text("মাস"),
+                                const Text("মাস"),
                               ],
                             ),
                             Column(
@@ -446,16 +446,190 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
-                                Text("দিন"),
+                                const Text("দিন"),
                               ],
                             ),
                           ],
                         ),
                       ],
                     ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      Image.asset(
+                        "assets/pro.png",
+                        height: 80,
+                        width: 80,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const Text(
+                        "মেনু নং",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Text(
+                        "০০০০১",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset(
+                        "assets/building.png",
+                        height: 80,
+                        width: 80,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const Text(
+                        "মেনু নং",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Text(
+                        "০০০০২",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset(
+                        "assets/disable.png",
+                        height: 80,
+                        width: 80,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const Text(
+                        "মেনু নং",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Text(
+                        "০০০০৩",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      Image.asset(
+                        "assets/company.png",
+                        height: 80,
+                        width: 80,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const Text(
+                        "মেনু নং",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Text(
+                        "০০০০৪",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset(
+                        "assets/doc.png",
+                        height: 80,
+                        width: 80,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const Text(
+                        "মেনু নং",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Text(
+                        "০০০০৫",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset(
+                        "assets/config.png",
+                        height: 80,
+                        width: 80,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const Text(
+                        "মেনু নং",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Text(
+                        "০০০০৬",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
