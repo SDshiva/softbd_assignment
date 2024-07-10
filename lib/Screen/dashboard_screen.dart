@@ -13,12 +13,19 @@ class DashBoardScreen extends StatefulWidget {
 
 class _DashBoardScreenState extends State<DashBoardScreen>
     with SingleTickerProviderStateMixin {
+  ProgressModelProvider? provider;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    final provider = Provider.of<ProgressModelProvider>(context, listen: false);
-    provider.setAnimationController(vsync: this);
+    provider = Provider.of<ProgressModelProvider>(context, listen: false);
+    provider!.setAnimationController(vsync: this);
+  }
+
+  @override
+  void dispose() {
+    provider!.disposeAnimationController();
+    super.dispose();
   }
 
   @override
@@ -182,7 +189,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                                 'সময় অতিবাহিত',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -208,7 +215,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Row(
@@ -221,7 +228,12 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                             const SizedBox(
                               width: 5,
                             ),
-                            const Text("১ই জানুয়ারি ২০২৪ - ৩১ই জানুয়ারি ২০৩০"),
+                            const Text(
+                              "১ই জানুয়ারি ২০২৪ - ৩১ই জানুয়ারি ২০৩০",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500),
+                            ),
                           ],
                         ),
                         const SizedBox(
@@ -300,10 +312,10 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
-                                Text("বছর"),
+                                const Text("বছর"),
                               ],
                             ),
                             Column(

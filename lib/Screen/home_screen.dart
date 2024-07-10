@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: .5,
                 fontSize: 20,
                 fontWeight: FontWeight.w900,
-                color: Colors.greenAccent,
+                color: Colors.red,
               ),
               type: BottomNavigationBarType.fixed,
               items: [

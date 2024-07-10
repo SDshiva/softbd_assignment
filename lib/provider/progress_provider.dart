@@ -23,6 +23,10 @@ class ProgressModelProvider extends ChangeNotifier {
   AnimationController get animationController => _animationController;
   double get animationValue => _animationValue.value;
 
+  void disposeAnimationController() {
+    _animationController.dispose();
+  }
+
   @override
   void dispose() {
     _animationController.dispose();

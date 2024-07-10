@@ -7,7 +7,8 @@ class CalanderScreen extends StatefulWidget {
   State<CalanderScreen> createState() => _CalanderScreenState();
 }
 
-class _CalanderScreenState extends State<CalanderScreen> {
+class _CalanderScreenState extends State<CalanderScreen>
+    with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
