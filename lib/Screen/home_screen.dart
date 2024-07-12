@@ -15,10 +15,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Widget> Screens = [
-    DashBoardScreen(),
+    const DashBoardScreen(),
     CalanderScreen(),
-    ScheduleScreen(),
-    ProfileScreen(),
+    const ScheduleScreen(),
+    const ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
               enableFeedback: false,
               // selectedItemColor: Colors.black,
               showSelectedLabels: true,
-              selectedLabelStyle: TextStyle(
+              selectedLabelStyle: const TextStyle(
                 height: .5,
                 fontSize: 20,
                 fontWeight: FontWeight.w900,

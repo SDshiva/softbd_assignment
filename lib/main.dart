@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:soft_bd_assignment/Screen/home_screen.dart';
+import 'package:soft_bd_assignment/provider/date_time_provider.dart';
 import 'package:soft_bd_assignment/provider/navigation_provider.dart';
 import 'package:soft_bd_assignment/provider/progress_provider.dart';
 
-void main() {
+Future<void> main() async {
+  await initializeDateFormatting('bn_BD', null);
+
   runApp(const MyApp());
 }
 
@@ -18,6 +22,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => NavigationProvider()),
         ChangeNotifierProvider(create: (_) => ProgressModelProvider()),
+        ChangeNotifierProvider(create: (_) => DateTimeProvider()),
       ],
       child: MaterialApp(
         theme: ThemeData(

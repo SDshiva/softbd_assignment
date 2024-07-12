@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ProgressModelProvider extends ChangeNotifier {
@@ -8,7 +7,7 @@ class ProgressModelProvider extends ChangeNotifier {
   void setAnimationController({required TickerProvider vsync}) {
     _animationController = AnimationController(
       vsync: vsync,
-      duration: Duration(seconds: 5),
+      duration: const Duration(seconds: 5),
     );
     _animationValue =
         Tween<double>(begin: 0.0, end: 1.0).animate(_animationController)

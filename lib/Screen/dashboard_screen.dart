@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
@@ -75,7 +74,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             children: [
               Card(
@@ -89,7 +88,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15.0),
                   ),
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Row(
                     children: [
                       ClipOval(
@@ -189,7 +188,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                                 'সময় অতিবাহিত',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -200,7 +199,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                     },
                   ),
                   const SizedBox(
-                    width: 15,
+                    width: 25,
                   ),
                   Expanded(
                     flex: 8,
@@ -226,13 +225,18 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                               height: 20,
                             ),
                             const SizedBox(
-                              width: 5,
+                              width: 3,
                             ),
-                            const Text(
-                              "১ই জানুয়ারি ২০২৪ - ৩১ই জানুয়ারি ২০৩০",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500),
+                            const Flexible(
+                              // flex: 6,
+                              child: Text(
+                                "১ই জানুয়ারি ২০২৪ - ৩১ই জানুয়ারি ২০৩০",
+                                // maxLines: 1,
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500),
+                              ),
                             ),
                           ],
                         ),
@@ -242,215 +246,221 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                         Text(
                           "আরও বাকি",
                           style: TextStyle(
-                            fontSize: 25,
+                            fontSize: 22,
                             fontWeight: FontWeight.bold,
                             color: Colors.red.shade300,
                           ),
+                        ),
+                        const SizedBox(
+                          height: 8,
                         ),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      width: 35.0,
-                                      height: 35.0,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Colors.red,
-                                          width: 1.0,
+                            Expanded(
+                              flex: 4,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        width: 35.0,
+                                        height: 35.0,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.red,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
-                                      ),
-                                      // alignment: Alignment.center,
-                                      child: TextField(
-                                        controller:
-                                            TextEditingController(text: "০"),
-                                        readOnly: true,
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                          fontSize: 35.0,
-                                        ),
-                                        decoration: const InputDecoration(
+                                        // alignment: Alignment.center,
+                                        child: TextField(
+                                          controller:
+                                              TextEditingController(text: "০"),
+                                          readOnly: true,
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontSize: 25.0,
+                                          ),
+                                          decoration: const InputDecoration(
                                             border: InputBorder.none,
-                                            contentPadding:
-                                                EdgeInsets.only(bottom: 10)),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 2,
-                                    ),
-                                    Container(
-                                      width: 35.0,
-                                      height: 35.0,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Colors.red,
-                                          width: 1.0,
+                                          ),
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
                                       ),
-                                      // alignment: Alignment.center,
-                                      child: TextField(
-                                        controller:
-                                            TextEditingController(text: "৫"),
-                                        readOnly: true,
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                          fontSize: 35.0,
+                                      const SizedBox(
+                                        width: 2,
+                                      ),
+                                      Container(
+                                        width: 35.0,
+                                        height: 35.0,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.red,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
                                         ),
-                                        decoration: const InputDecoration(
+                                        // alignment: Alignment.center,
+                                        child: TextField(
+                                          controller:
+                                              TextEditingController(text: "৫"),
+                                          readOnly: true,
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontSize: 25.0,
+                                          ),
+                                          decoration: const InputDecoration(
                                             border: InputBorder.none,
-                                            contentPadding:
-                                                EdgeInsets.only(bottom: 10)),
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                const Text("বছর"),
-                              ],
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  const Text("বছর"),
+                                ],
+                              ),
                             ),
-                            Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      width: 35.0,
-                                      height: 35.0,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Colors.red,
-                                          width: 1.0,
+                            Expanded(
+                              flex: 4,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        width: 35.0,
+                                        height: 35.0,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.red,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
-                                      ),
-                                      // alignment: Alignment.center,
-                                      child: TextField(
-                                        controller:
-                                            TextEditingController(text: "০"),
-                                        readOnly: true,
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                          fontSize: 35.0,
-                                        ),
-                                        decoration: const InputDecoration(
+                                        // alignment: Alignment.center,
+                                        child: TextField(
+                                          controller:
+                                              TextEditingController(text: "০"),
+                                          readOnly: true,
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontSize: 25.0,
+                                          ),
+                                          decoration: const InputDecoration(
                                             border: InputBorder.none,
-                                            contentPadding:
-                                                EdgeInsets.only(bottom: 10)),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 2,
-                                    ),
-                                    Container(
-                                      width: 35.0,
-                                      height: 35.0,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Colors.red,
-                                          width: 1.0,
+                                          ),
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
                                       ),
-                                      // alignment: Alignment.center,
-                                      child: TextField(
-                                        controller:
-                                            TextEditingController(text: "৬"),
-                                        readOnly: true,
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                          fontSize: 35.0,
+                                      const SizedBox(
+                                        width: 2,
+                                      ),
+                                      Container(
+                                        width: 35.0,
+                                        height: 35.0,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.red,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
                                         ),
-                                        decoration: const InputDecoration(
+                                        // alignment: Alignment.center,
+                                        child: TextField(
+                                          controller:
+                                              TextEditingController(text: "৬"),
+                                          readOnly: true,
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontSize: 25.0,
+                                          ),
+                                          decoration: const InputDecoration(
                                             border: InputBorder.none,
-                                            contentPadding:
-                                                EdgeInsets.only(bottom: 10)),
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                const Text("মাস"),
-                              ],
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  const Text("মাস"),
+                                ],
+                              ),
                             ),
-                            Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      width: 35.0,
-                                      height: 35.0,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Colors.red,
-                                          width: 1.0,
+                            Expanded(
+                              flex: 4,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        width: 35.0,
+                                        height: 35.0,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.red,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
-                                      ),
-                                      // alignment: Alignment.center,
-                                      child: TextField(
-                                        controller:
-                                            TextEditingController(text: "১"),
-                                        readOnly: true,
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                          fontSize: 35.0,
-                                        ),
-                                        decoration: const InputDecoration(
+                                        // alignment: Alignment.center,
+                                        child: TextField(
+                                          controller:
+                                              TextEditingController(text: "১"),
+                                          readOnly: true,
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontSize: 25.0,
+                                          ),
+                                          decoration: const InputDecoration(
                                             border: InputBorder.none,
-                                            contentPadding:
-                                                EdgeInsets.only(bottom: 10)),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 2,
-                                    ),
-                                    Container(
-                                      width: 35.0,
-                                      height: 35.0,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Colors.red,
-                                          width: 1.0,
+                                          ),
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
                                       ),
-                                      // alignment: Alignment.center,
-                                      child: TextField(
-                                        controller:
-                                            TextEditingController(text: "২"),
-                                        readOnly: true,
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                          fontSize: 35.0,
+                                      const SizedBox(
+                                        width: 2,
+                                      ),
+                                      Container(
+                                        width: 35.0,
+                                        height: 35.0,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.red,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
                                         ),
-                                        decoration: const InputDecoration(
+                                        // alignment: Alignment.center,
+                                        child: TextField(
+                                          controller:
+                                              TextEditingController(text: "২"),
+                                          readOnly: true,
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontSize: 25.0,
+                                          ),
+                                          decoration: const InputDecoration(
                                             border: InputBorder.none,
-                                            contentPadding:
-                                                EdgeInsets.only(bottom: 10)),
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                const Text("দিন"),
-                              ],
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  const Text("দিন"),
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -460,7 +470,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                 ],
               ),
               const SizedBox(
-                height: 15,
+                height: 30,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
