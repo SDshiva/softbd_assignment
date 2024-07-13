@@ -25,5 +25,5 @@ This is a Flutter application that offers a seamless user experience, designed t
   Your browser does not support the video tag.
 </video>
 
-Alternatively, you can download and view the screen recording [here](app_recordings/app_recording.mp4).
+[Watch the screen recording](https://drive.google.com/file/d/1opDqxrqAQDPcuHi6TzAU8VpJw6yNSyTj/view?usp=drive_link)
 
