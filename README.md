@@ -1,16 +1,27 @@
-# soft_bd_assignment
+#SoftBd Assignment - Flutter App
 
-A new Flutter project.
+## Description
+This is a Flutter application that offers a seamless user experience, designed to match high fidelity with the provided Figma designs. It is responsive across different devices and includes several key features such as date management and API integration.
 
-## Getting Started
+## Features
+1. **Design Fidelity**: The final application matches the Figma design and is responsive across different devices.
+2. **Component Functionality**: Functional components and widgets have been identified and implemented as required.
+3. **Date Management (Screen 2)**: Displays 7 previous days and 7 upcoming days, with the current date selected by default.
+4. **API Integration (Screen 2)**: Utilizes the provided API to fetch data and update the UI based on the selected date.
+5. **Demo Data**: Uses relevant demo data when necessary.
+6. **Functionality**: Ensures the project is as fully functional as possible.
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+![Screen_1](app_recordings/screen1.png)
+![Screen_2](app_recordings/screen2.png)
+![Screen_3](app_recordings/screen3.png)
+![Success](app_recordings/success.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screen Recording
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<video width="320" height="240" controls>
+  <source src="app_recordings/app_recording.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
