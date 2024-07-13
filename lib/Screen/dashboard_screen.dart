@@ -263,6 +263,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                               child: Column(
                                 children: [
                                   Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Container(
                                         width: 35.0,
@@ -331,6 +332,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                               child: Column(
                                 children: [
                                   Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Container(
                                         width: 35.0,
@@ -399,6 +401,7 @@ class _DashBoardScreenState extends State<DashBoardScreen>
                               child: Column(
                                 children: [
                                   Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Container(
                                         width: 35.0,
