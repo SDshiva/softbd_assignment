@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:soft_bd_assignment/Screen/add_new_screen.dart';
 import 'package:soft_bd_assignment/provider/api_calling_provider.dart';
 import 'package:soft_bd_assignment/provider/date_time_provider.dart';
 
@@ -57,7 +58,9 @@ class _CalanderScreenState extends State<CalanderScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        // padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(
+            top: 16.0, left: 16.0, right: 16.0, bottom: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -88,7 +91,13 @@ class _CalanderScreenState extends State<CalanderScreen> {
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddNewScreen(),
+                          ));
+                    },
                     style: ButtonStyle(
                       foregroundColor: MaterialStateProperty.all(Colors.white),
                       padding: MaterialStateProperty.all(
@@ -210,11 +219,21 @@ class _CalanderScreenState extends State<CalanderScreen> {
                 return Consumer<DataProvider>(
                   builder: (context, dataProvider, child) {
                     if (dataProvider.isLoading) {
-                      return const Center(child: CircularProgressIndicator());
+                      return const Expanded(
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            color: Colors.greenAccent,
+                          ),
+                        ),
+                      );
                     }
 
                     if (dataProvider.errorMessage.isNotEmpty) {
-                      return Center(child: Text(dataProvider.errorMessage));
+                      return Expanded(
+                        child: Center(
+                          child: Text(dataProvider.errorMessage),
+                        ),
+                      );
                     }
 
                     // Filter data based on selected date
