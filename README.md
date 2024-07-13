@@ -13,10 +13,10 @@ This is a Flutter application that offers a seamless user experience, designed t
 
 ## Screenshots
 
-![Screen_1](app_recordings/screen1.png)
-![Screen_2](app_recordings/screen2.png)
-![Screen_3](app_recordings/screen3.png)
-![Success](app_recordings/success.png)
+![Screen_1](app_recordings/screen1.jpg)
+![Screen_2](app_recordings/screen2.jpg)
+![Screen_3](app_recordings/screen3.jpg)
+![Success](app_recordings/success.jpg)
 
 ## Screen Recording
 
