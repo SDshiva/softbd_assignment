@@ -228,8 +228,17 @@ class _CalanderScreenState extends State<CalanderScreen> {
                     }).toList();
 
                     if (filteredData.isEmpty) {
-                      return const Center(
-                          child: Text('No data for selected date'));
+                      return const Expanded(
+                        child: Center(
+                            child: Text(
+                          'দুঃখিত, কোনো তথ্য পাওয়া যায় নি।',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )),
+                      );
                     }
 
                     // Display filtered data in ListView
