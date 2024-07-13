@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
@@ -31,13 +32,13 @@ class _CalanderScreenState extends State<CalanderScreen> {
           padding: const EdgeInsets.only(left: 16),
           child: IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.menu,
               size: 30,
             ),
           ),
         ),
-        title: Text(
+        title: const Text(
           "সময়রেখা",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -78,8 +79,8 @@ class _CalanderScreenState extends State<CalanderScreen> {
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [
-                        Colors.greenAccent,
-                        Colors.green,
+                        Color(0xFF79AA5C),
+                        Color(0xFF427C4E),
                       ],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
@@ -209,7 +210,7 @@ class _CalanderScreenState extends State<CalanderScreen> {
                 return Consumer<DataProvider>(
                   builder: (context, dataProvider, child) {
                     if (dataProvider.isLoading) {
-                      return Center(child: CircularProgressIndicator());
+                      return const Center(child: CircularProgressIndicator());
                     }
 
                     if (dataProvider.errorMessage.isNotEmpty) {
@@ -227,23 +228,164 @@ class _CalanderScreenState extends State<CalanderScreen> {
                     }).toList();
 
                     if (filteredData.isEmpty) {
-                      return Center(child: Text('No data for selected date'));
+                      return const Center(
+                          child: Text('No data for selected date'));
                     }
 
                     // Display filtered data in ListView
                     return Expanded(
                       child: ListView.builder(
+                        shrinkWrap: true,
                         itemCount: filteredData.length,
                         itemBuilder: (context, index) {
                           final item = filteredData[index];
+                          // final timeOfDayText =
+                          dataProvider.timeFormatting(item);
                           final date = DateTime.fromMillisecondsSinceEpoch(
                               item.date * 1000);
                           final time = DateFormat('h:mm', 'bn_BD').format(date);
-                          return ListTile(
-                            title: Text(item.name),
-                            subtitle:
-                                Text('${item.category} - ${item.location}'),
-                            trailing: Text(time + " মি."),
+                          // String timeOfDayText
+                          return Row(
+                            children: [
+                              Expanded(
+                                flex: 4,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      dataProvider.timeOfDayText,
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w400,
+                                        color: index % 2 != 0
+                                            ? Colors.blue
+                                            : Colors.black,
+                                      ),
+                                    ),
+                                    Text(
+                                      "$time মি.",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w400,
+                                        color: index % 2 != 0
+                                            ? Colors.blue
+                                            : Colors.black,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Expanded(
+                                flex: 8,
+                                child: Card(
+                                  elevation:
+                                      0, // Optionally remove elevation if not needed
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  // color: index % 2 == 0 ? ,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      gradient: LinearGradient(
+                                        colors: index % 2 == 0
+                                            ? [
+                                                const Color(0xFF79AA5C),
+                                                const Color(0xFF427C4E)
+                                              ]
+                                            : [
+                                                const Color(0xFF202020),
+                                                const Color(0xFF202020),
+                                              ],
+                                        begin: Alignment.topLeft,
+                                        end: Alignment.bottomRight,
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              const Icon(
+                                                Icons.access_time_rounded,
+                                                size: 18,
+                                                color: Colors.white,
+                                              ),
+                                              const SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text(
+                                                "$time মি.",
+                                                style: const TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          const SizedBox(
+                                            height: 7,
+                                          ),
+                                          Text(
+                                            item.name,
+                                            style: const TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.white),
+                                          ),
+                                          const SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            item.category,
+                                            style: const TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.white),
+                                          ),
+                                          const SizedBox(
+                                            height: 5,
+                                          ),
+                                          Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              const Icon(
+                                                Icons.location_on_outlined,
+                                                size: 18,
+                                                color: Colors.white,
+                                              ),
+                                              const SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text(
+                                                item.location,
+                                                style: const TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: Colors.white),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
                           );
                         },
                       ),

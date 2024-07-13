@@ -34,7 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 56.0,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.greenAccent, Colors.green],
+                  colors: [
+                    Color(0xFF79AA5C),
+                    Color(0xFF427C4E),
+                  ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
