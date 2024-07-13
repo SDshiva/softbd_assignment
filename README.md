@@ -21,7 +21,7 @@ This is a Flutter application that offers a seamless user experience, designed t
 ## Screen Recording
 
 <video width="320" height="240" controls>
-  <source src="app_recordings/app_recording.mp4" type="video/mp4">
+  <source src="app_recordings/app_recording_compressed.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
